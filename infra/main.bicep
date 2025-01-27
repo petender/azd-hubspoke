@@ -11,7 +11,7 @@ param location string
 
 @secure()
 @description('Password for the Windows VM')
-param winVMPassword string
+param winVMPassword string //no value specified, so user will get prompted for it during deployment
 
 // Tags that should be applied to all resources.
 // 
@@ -37,7 +37,7 @@ module hubspoke './hubspoke.bicep' = {
     tags: tags
     winVmDnsPrefix: 'winvm'
     winVmUser: 'adminuser'
-    winVmPassword: ''
+    winVmPassword: winVMPassword //no value specified, so user will get prompted for it during deployment
   }
 }
 
