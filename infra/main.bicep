@@ -22,6 +22,8 @@ var tags = {
   'azd-env-name': environmentName
 }
 
+var resourceToken = toLower(uniqueString(subscription().id, environmentName, location))
+
 resource rg 'Microsoft.Resources/resourceGroups@2022-09-01' = {
   name: 'rg-${environmentName}'
   location: location
@@ -35,7 +37,7 @@ module hubspoke './hubspoke.bicep' = {
     environmentName: environmentName
     location: location
     tags: tags
-    winVmDnsPrefix: 'winvm'
+    winVmDnsPrefix: 'winvm-${resourceToken}'
     winVmUser: 'adminuser'
     winVmPassword: winVMPassword //no value specified, so user will get prompted for it during deployment
   }
