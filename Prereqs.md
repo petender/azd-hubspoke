@@ -1,3 +1,3 @@
 - AZD Installed
 - PWSH (PowerShell - latest version)
-- .NET 6 Framework
+- [.NET 6 Framework](https://dotnet.microsoft.com/en-us/download/dotnet/6.0)
