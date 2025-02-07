@@ -1,3 +1,7 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/Azure/azure-dev/main/schemas/v1.0/azure.yaml.json
 
-name: azd-hubspoke
+name: tdd-azd-hubspoke
+metadata:
+    template: tdd-azd-hubspoke@1.11.0
+infra:
+   provider: "bicep"
