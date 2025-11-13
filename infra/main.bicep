@@ -20,6 +20,7 @@ param winVMPassword string //no value specified, so user will get prompted for i
 //   tags: union(tags, { 'azd-service-name': <service name in azure.yaml> })
 var tags = {
   'azd-env-name': environmentName
+  'SecurityControl': 'Ignore'
 }
 
 var resourceToken = toLower(uniqueString(subscription().id, environmentName, location))
